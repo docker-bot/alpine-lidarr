@@ -1,8 +1,5 @@
-#!/usr/bin/with-contenv bash
-# shellcheck shell=bash
-
+#!/command/with-contenv bash
 umask "${UMASK}"
-
 echo "
 ----------------------------------------------------------------------
 ENVIRONMENT
@@ -11,6 +8,9 @@ PUID=${PUID}
 PGID=${PGID}
 UMASK=${UMASK}
 TZ=${TZ}
+VERSION=${LVERSION}
+APP_DIR=${APP_DIR
+CONFIG_DIR=${CONFIG_DIR}
 ----------------------------------------------------------------------
 "
 
@@ -30,12 +30,3 @@ fi
 echo "Applying permissions to ${CONFIG_DIR}"
 chmod "=rwx" "${CONFIG_DIR}"
 chown agpsn:agpsn "${CONFIG_DIR}"
-
-if [[ -d "${CONFIG_DIR}/app" ]]; then
-    if [[ -n "$(ls -A "${CONFIG_DIR}/app")" ]]; then
-        echo "Migrating files from \"${CONFIG_DIR}/app\" to \"${CONFIG_DIR}\"..."
-        shopt -s dotglob
-        mv -f "${CONFIG_DIR}/app/"* "${CONFIG_DIR}" > /dev/null 2>&1 && rmdir "${CONFIG_DIR}/app"
-        shopt -u dotglob
-    fi
-fi
