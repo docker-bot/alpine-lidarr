@@ -1,5 +1,4 @@
-#FROM ghcr.io/agpsn/base:edge
-FROM ghcr.io/agpsn/base:latest
+FROM ghcr.io/agpsn/alpine-base:latest
 
 ARG LBRANCH="master"
 ARG LVERSION
@@ -16,11 +15,8 @@ RUN set -xe && \
 COPY root/ /
 
 # healthcheck
-HEALTHCHECK --start-period=10s --timeout=5s CMD wget -qO /dev/null 'http://localhost:8686/api/v1/system/status' --header "x-api-key: $(xmlstarlet sel -t -v '/Config/ApiKey' "${CONFIG_DIR}"/lidarr/config.xml)"
+HEALTHCHECK --start-period=10s --timeout=5s CMD wget -qO /dev/null 'http://localhost:8686/api/v1/system/status' --header "x-api-key: $(xmlstarlet sel -t -v '/Config/ApiKey' "${CONFIG_DIR}"/config.xml)"
 
 # ports and volumes
 EXPOSE 8686
 VOLUME "${CONFIG_DIR}"
-
-# ENV org.opencontainers.image.version=${LVERSION}
-# ENV org.opencontainers.image.source=https://github.com/agpsn/lidarr
