@@ -1,5 +1,0 @@
-#!/usr/bin/with-contenv bash
-# shellcheck shell=bash
-
-umask "${UMASK}"
-exec s6-setuidgid agpsn "${APP_DIR}/radarr/bin/Radarr" -nobrowser -data="${CONFIG_DIR}/radarr"
