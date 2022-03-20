@@ -6,13 +6,14 @@
 name: Trivy
 
 on:
-  push:
-    branches: [ latest ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ latest ]
+#  push:
+#    branches: latest
+#  pull_request:
+#    branches: latest
   schedule:
-    - cron: '45 17 * * 1'
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    branches: latest
 
 permissions:
   contents: read
