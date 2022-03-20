@@ -1,8 +1,13 @@
 on:
-  push:
-    branches:
-      - latest
-
+#  push:
+#    branches: latest
+#  pull_request:
+#    branches: latest
+  schedule:
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+    branches: latest
+   
 name: 'Shellcheck'
 
 jobs:
