@@ -1,1 +1,4 @@
-/s6-overlay/s6-rc.d
+#!/command/with-contenv
+umask "${UMASK}"
+cd ${APP_DIR}/lidarr/bin || exit
+exec s6-setuidgid agpsn "${APP_DIR}/lidarr/bin/Lidarr" -nobrowser -data="${CONFIG_DIR}"
