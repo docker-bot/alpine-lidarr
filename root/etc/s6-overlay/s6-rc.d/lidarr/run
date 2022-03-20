@@ -1,4 +1,4 @@
-#!/command/with-contenv
+#!/command/with-contenv bash
 umask "${UMASK}"
 cd ${APP_DIR}/lidarr/bin || exit
 exec s6-setuidgid agpsn "${APP_DIR}/lidarr/bin/Lidarr" -nobrowser -data="${CONFIG_DIR}"
