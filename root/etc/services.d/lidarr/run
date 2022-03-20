@@ -1,5 +1,3 @@
-#!/usr/bin/with-contenv bash
-# shellcheck shell=bash
-
+#!/command/with-contenv
 umask "${UMASK}"
-exec s6-setuidgid agpsn "${APP_DIR}/lidarr/bin/Lidarr" -nobrowser -data="${CONFIG_DIR}/lidarr"
+exec s6-setuidgid agpsn "${APP_DIR}/lidarr/bin/Lidarr" -nobrowser -data="${CONFIG_DIR}"
