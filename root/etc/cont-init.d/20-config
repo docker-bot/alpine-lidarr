@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+# cleanup pid if it exists
+[[ -e "${CONFIG_DIR}/lidarr/lidarr.pid" ]] &&	rm -rf "${CONFIG_DIR}/lidarr/lidarr.pid"
+[[ -e "${CONFIG_DIR}/radarr/radarr.pid" ]] &&	rm -rf "${CONFIG_DIR}/radarr/radarr.pid"
+[[ -e "${CONFIG_DIR}/sonarr/sonarr.pid" ]] &&	rm -rf "${CONFIG_DIR}/sonarr/sonarr.pid"
+
+# permissions
+chown -R agpsn:agpsn \
+	"${APP_DIR} \
+	"${CONFIG_DIR}
