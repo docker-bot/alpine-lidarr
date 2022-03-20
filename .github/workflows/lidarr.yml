@@ -10,8 +10,8 @@ on:
     - cron: '0 12 * * *'
 #  push:
 #    branches: latest
-#  pull_request:
-#    branches: latest
+  pull_request:
+    branches: latest
   workflow_dispatch:
     branches: latest
 env:
