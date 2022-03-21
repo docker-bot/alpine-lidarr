@@ -8,7 +8,7 @@ docker run -d \
   -e PUID=99 \
   -e PGID=100 \
   -e TZ=UTC \ #optional
-  -e UMASK_SET=000 \  #optional
+  -e UMASK=022 \  #optional
   -p <hostport>:8686 \
   -v <hostconfigpath>:/config \
   --restart unless-stopped \  #optional
