@@ -1,5 +1,4 @@
-#FROM ghcr.io/agpsn/alpine-base:latest
-FROM test/base:latest
+FROM ghcr.io/agpsn/alpine-base:latest
 
 ARG LBRANCH="master"
 ARG LVERSION
