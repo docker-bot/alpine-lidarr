@@ -9,7 +9,7 @@ PGID=${PGID}
 UMASK=${UMASK}
 TZ=${TZ}
 VERSION=${LVERSION}
-APP_DIR=${APP_DIR
+APP_DIR=${APP_DIR}
 CONFIG_DIR=${CONFIG_DIR}
 ----------------------------------------------------------------------
 "
